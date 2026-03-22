@@ -310,3 +310,15 @@ li {
   color: #184099;
   margin-top: 20px;
 }
+
+.building-photo {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.building-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
