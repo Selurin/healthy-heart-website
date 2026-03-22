@@ -1,0 +1,173 @@
+/**
+ * ============================================
+ * Custom Slider Component v1.0
+ * ============================================
+ * Базовые стили для слайдера
+ */
+
+/* === КОНТЕЙНЕР СЛАЙДЕРА === */
+.slider-wrapper {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === ОКНО ПРОСМОТРА === */
+.slider-viewport {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === ЛЕНТА СЛАЙДОВ === */
+.slider-track {
+  display: flex;
+  gap: 15px;
+  height: 100%;
+  align-items: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* === СЛАЙД === */
+.slider-slide {
+  width: 360px;
+  height: 360px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Изображение в слайде */
+.slider-slide .slide-image {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  background: #000;
+}
+
+.slider-slide .slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Текст в слайде */
+.slider-slide .slide-text {
+  height: 30%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+}
+
+.slider-slide .slide-text h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #2563EB;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slider-slide .slide-text p {
+  font-size: 13px;
+  line-height: 1.3;
+  color: #184099;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Ссылка "Читать далее" */
+.slider-slide .slide-text .read-more {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #F97316;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.slider-slide .slide-text .read-more:hover {
+  text-decoration: underline;
+}
+
+/* === СТРЕЛКИ НАВИГАЦИИ === */
+.slider-btn-prev,
+.slider-btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: rgba(37, 99, 235, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  padding: 0;
+}
+
+.slider-btn-prev span,
+.slider-btn-next span {
+  font-size: 28px;
+  color: #fff;
+  line-height: 1;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.slider-btn-prev:hover:not(:disabled),
+.slider-btn-next:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn-prev:active:not(:disabled),
+.slider-btn-next:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Disabled состояние - стрелка исчезает */
+.slider-btn-prev:disabled,
+.slider-btn-next:disabled {
+  opacity: 0;
+  cursor: default;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Позиционирование стрелок */
+.slider-btn-prev {
+  left: 5px;
+}
+
+.slider-btn-next {
+  right: 5px;
+}
