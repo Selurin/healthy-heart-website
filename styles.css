@@ -322,3 +322,34 @@ li {
   height: auto;
   border-radius: 10px;
 }
+
+.news-container {
+  width: auto;
+  height: 360px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 50px;
+  padding:10px
+}
+.news-img-container {
+
+  width: 360px;
+  height: 360px;
+
+
+}
+.news-img {
+    margin: 5px;
+
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+  background: #000;
+}
